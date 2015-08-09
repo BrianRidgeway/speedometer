@@ -3,6 +3,8 @@ Angular JS directive for an HTML5-canvas speedometer type needle gauge.
 
 Most of the canvas code originated in [Ray Hammond's](https://github.com/rheh) [HTML5-canvas-projects](https://github.com/rheh/HTML5-canvas-projects) project, specifically the [speedometer](https://geeksretreat.wordpress.com/2012/04/13/making-a-speedometer-using-html5s-canvas) that I've taken and used to create a customizable Angular JS directive. Big thanks to rheh!
 
+Fiddle: https://jsfiddle.net/u5q04nzn/
+
 ## Usage
 You must include the ridge-speedometer dependency on your angular module:
 
