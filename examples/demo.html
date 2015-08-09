@@ -1,0 +1,105 @@
+<html ng-app="demo">
+	<head>
+		   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+		   <script src="../src/ridge-speedometer.js"></script>
+		   <script type="text/javascript">
+		   		angular.module( 'demo', ['ridge-speedometer'])
+		   		.controller( 'demoCtl', function($scope, $interval){
+		   			$scope.val = 0;
+		   			$interval( function(){ $scope.val = $scope.val + 7}, 1500, 12 )
+		   			$scope.conf = {};
+		   			$scope.setVal = function(){ 
+		   				$scope.val = $scope.tmpVal
+		   			}
+		   		});
+		   	</script>
+		   	<style>
+		   		body {
+		   			background: #b0c4de;
+		   		}
+		   		.demo-container {
+		   			position: relative;
+		   			float: left;
+		   			padding-left: 10px;
+		   		}
+		   		pre {
+		   			background: #dcdcdc;
+		   		}
+		   		.demo-label {
+		   			text-align: center;
+		   		}
+		   		.set-value-container {
+		   			text-align: center;
+		   		}
+		   		h1 {
+		   			text-align: center;
+		   		}
+		   	</style>
+	</head>
+	<body>
+		<h1>Demos of Speedometer</h1>
+		<div>
+		<div ng-controller="demoCtl" class="demo-container">
+			<div class="demo-label">Defaults</div>
+			<div>
+				<ridge-speedometer x-val="val"/>
+			</div>
+			<div>
+				<pre>
+conf: {}
+				</pre>
+			</div>
+		</div>
+		<div ng-controller="demoCtl" class="demo-container">
+			<div class="demo-label">Customizable Colors</div>
+			<div>
+				<ridge-speedometer x-val="val" x-conf="{backgroundColor: 'blue', edgeInnerColor: 'rgb(173,255,47)', edgeOuterColor: 'rgb(34,139,34)'}" />
+			</div>
+			<div>
+				<pre>
+conf: {
+	backgroundColor: 'blue', 
+	edgeInnerColor:  'rgb(173,255,47)', 
+	edgeOuterColor:  'rgb(34,139,34)'
+}
+				</pre>
+			</div>
+		</div>
+		<div ng-controller="demoCtl" class="demo-container">
+			<div class="demo-label">Customizable Ticks</div>
+			<div>
+				<ridge-speedometer x-val="val" x-conf="{max: 125, largeTickIncrement: 20}"/>
+			</div>
+			<div>
+				<pre>
+conf: {
+	max: 125,
+	largeTickIncrement: 20
+}
+				</pre>
+			</div>
+		</div>
+		<div ng-controller="demoCtl" class="demo-container">
+			<div class="demo-label">Wobble</div>
+			<div>
+				<ridge-speedometer x-val="val" x-conf="{wobble: true, backgroundColor: 'white', smallTickColor: 'black', largeTickColor: 'black', markerColor: 'black', needleBaseColor1: 'black', normalColor: 'transparent', warningColor: 'transparent'}"/>
+			</div>
+			<div>
+				<pre>
+conf: {
+	wobble: true, 
+	backgroundColor: 'white', 
+	smallTickColor: 'black', 
+	largeTickColor: 'black', 
+	markerColor: 'black', 
+	needleBaseColor1: 'black', 
+	normalColor: 'transparent', 
+	warningColor: 'transparent'
+}
+				</pre>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>
+		   		
